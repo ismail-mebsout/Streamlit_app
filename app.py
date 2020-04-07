@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 def main():
     ########### Sidebar ##############################
     st.sidebar.markdown("# Fitness app 🏋️")
-    st.sidebar.markdown("This application is developped using streamlit :computer:")
+    st.sidebar.markdown("This application is developped using streamlit 💻")
     st.sidebar.markdown("Please enter the following information:\n")
     weight = st.sidebar.slider("Choose your weight (kg): ", min_value=0,   
                        max_value=200, value=73, step=1)
