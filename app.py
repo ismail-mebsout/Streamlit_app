@@ -20,7 +20,7 @@ def main():
 
     ########### Core ##############################
     ### IMC
-    st.markdown("# :pill: Health indicators")
+    st.markdown("# 💊 Health indicators")
     st.markdown("## IMC")
     
     imc=int(weight/(height/100)**2)
@@ -52,7 +52,7 @@ def main():
     st.write(fig)
 
     ### Nutrition
-    st.markdown("# :meat_on_bone: Nutrition indicators")
+    st.markdown("# 🍖 Nutrition indicators")
     st.markdown("This section is based on all the information given above")
 
     prot_needs_g=int(1.6*weight)
