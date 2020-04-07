@@ -15,7 +15,7 @@ def main():
     max_value=100, value=24, step=1)
     gender=st.sidebar.radio("Choose your gender:",("Man", "Woman"))
     activity=st.sidebar.radio("How active are you?",("Sedentary", "Moderately active", "Very active"))
-    target=st.sidebar.radio("What are your goals",("Fat loss and muscle development", "Muscle development"))
+    target=st.sidebar.radio("What are your goals?",("Fat loss and muscle development", "Muscle development"))
 
 
     ########### Core ##############################

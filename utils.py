@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 
 def imc_chart(imc):
+    color="gray"
     if imc<16 or imc>30:
         color="red"
     elif (imc>16 and imc<18.5) or (imc>25 and imc<30):
