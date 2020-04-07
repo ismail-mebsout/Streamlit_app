@@ -21,10 +21,10 @@ def main():
     ########### Core ##############################
     ### IMC
     st.markdown("# 💊 Health indicators")
-    st.markdown("## IMC")
+    st.markdown("## BMI")
     
     imc=int(weight/(height/100)**2)
-    st.markdown("Your IMC is the following:")
+    st.markdown("Your BMI is the following:")
     fig=utils.imc_chart(imc)
     st.write(fig)
 
@@ -65,33 +65,11 @@ def main():
     carbs_needs_g=int((tded-prot_needs_kcal-fat_needs_kcal)/4)
   
     choice_nut=st.radio("", ("Gramme", "Calorie"))
-    if choice_nut=="Gramme":
-        nutr = ['Proteins (g)', 'Fat (g)', 'Carbs (g)']
-        needs = [prot_needs_g,fat_needs_g,carbs_needs_g]
-        fig = go.Figure(data = [go.Pie(labels = nutr, values = needs)])
-        fig.update_traces(textposition='inside', textinfo='percent+label+value')
-        st.write(fig)
-    elif choice_nut=="Calorie":
-        nutr = ['Proteins (cal)', 'Fat (cal)', 'Carbs (cal)']
-        needs = [prot_needs_kcal,fat_needs_kcal,carbs_needs_kcal]
-        fig = go.Figure(data = [go.Pie(labels = nutr, values = needs)])
-        fig.update_traces(textposition='inside', textinfo='percent+label+value')
-        st.write(fig)
+    fig=utils.nutri_chart(choice_nut, prot_needs_g,fat_needs_g,carbs_needs_g, prot_needs_kcal,fat_needs_kcal, carbs_needs_kcal)
+    st.write(fig)
 
-@st.cache
-def load_data():
-    df = data.cars()
-    return df
-
-def visualize_data(df, x_axis, y_axis):
-    graph = alt.Chart(df).mark_circle(size=60).encode(
-        x=x_axis,
-        y=y_axis,
-        color='Origin',
-        tooltip=['Name', 'Origin', 'Horsepower', 'Miles_per_Gallon']
-    ).interactive()
-
-    st.write(graph)
+# @st.cache
+# def
 
 if __name__ == "__main__":
     main()
